@@ -1,0 +1,14 @@
+# Core ADK dependency
+google-adk
+
+# Environment variables
+python-dotenv
+
+# Optional: Supabase for database
+# supabase
+
+# Optional: HTTP requests
+# httpx
+
+# Optional: Testing
+# pytest

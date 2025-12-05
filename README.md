@@ -16,6 +16,26 @@
 
 ---
 
+## 📋 Prerequisites
+
+Before you begin, make sure you have:
+
+### 1. Python 3.10 or higher
+
+```bash
+# Check your Python version
+python --version
+
+# If not installed or too old, download from:
+# https://www.python.org/downloads/
+```
+
+### 2. A Gemini API Key (Free!)
+
+Get your API key at: **https://aistudio.google.com/apikey**
+
+---
+
 ## 🏁 Quick Start
 
 ### 1️⃣ Clone This Template
@@ -38,22 +58,46 @@ python -m venv .venv
 .venv\Scripts\activate
 # Mac/Linux:
 source .venv/bin/activate
-
-# Install dependencies
-pip install -r requirements.txt
 ```
 
-### 3️⃣ Add Your API Key
+### 3️⃣ Install Google ADK
+
+```bash
+# Install ADK and dependencies
+pip install -r requirements.txt
+
+# Verify ADK is installed
+adk --version
+```
+
+> 💡 **Tip:** If `adk --version` doesn't work, try `pip install google-adk` directly.
+
+### 4️⃣ Add Your API Key
 
 ```bash
 # Copy the example file
+# Windows:
+copy .env.example .env
+# Mac/Linux:
 cp .env.example .env
-
-# Edit .env and add your Gemini API key
-# Get one free at: https://aistudio.google.com/apikey
 ```
 
-### 4️⃣ Start Building! 🎉
+Now edit `.env` and add your Gemini API key:
+```
+GOOGLE_API_KEY=your_actual_api_key_here
+```
+
+### 5️⃣ Verify Everything Works
+
+```bash
+# Test with a template agent
+adk run templates/basic_agent
+
+# You should see the agent respond!
+# Type 'exit' to quit
+```
+
+### 6️⃣ Start Building! 🎉
 
 Tell your AI assistant:
 

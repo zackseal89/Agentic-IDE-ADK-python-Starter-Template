@@ -111,6 +111,51 @@ def get_weather(city):
 
 ---
 
+## 🚀 Deployment
+
+When your agent is ready for production, you have several options:
+
+### Deploy to Vertex AI Agent Engine (Recommended)
+
+Agent Engine is a fully managed Google Cloud service for deploying, managing, and scaling AI agents. It handles infrastructure so you can focus on creating intelligent applications.
+
+#### Prerequisites
+- Google Cloud account with billing enabled
+- Python 3.9-3.13
+- Google Cloud SDK installed and authenticated
+- Vertex AI API enabled in your project
+
+#### Deployment Process
+1. Prepare your agent with a `deploy.py` file that wraps your agent in an `AdkApp`
+2. Deploy using either:
+   - ADK CLI: `adk deploy agent_engine --project=PROJECT_ID --region=REGION --display_name="Agent Name" /path/to/agent`
+   - Python SDK: Using `agent_engines.create()` function
+
+For detailed deployment instructions, see the [Agent Engine Deployment Guide](adk_knowledge_base/agent_engine_deployment_guide.md).
+
+---
+
+## 🔐 Security Best Practices
+
+When implementing code execution or other powerful tools in your agents, security considerations are paramount:
+
+### For Code Execution
+- Always execute code in a sandboxed environment
+- Implement timeouts to prevent infinite loops
+- Never run code with elevated privileges
+- Validate and sanitize all inputs
+- Use allowlists for allowed operations when possible
+- For production, consider using GKE Code Executor instead of custom implementations
+
+### General Security
+- Follow the principle of least privilege
+- Implement proper authentication and authorization
+- Monitor and log agent activities
+- Regularly update dependencies
+- Handle errors gracefully without exposing system details
+
+---
+
 ## 🎉 Ready to Help!
 
 When the user describes an agent idea, start with:

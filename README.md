@@ -145,6 +145,8 @@ my-agent-project/
 ├── 📚 adk_knowledge_base/          # ADK documentation
 │   ├── adk_reference_guide.md      # Core concepts, tools, deployment
 │   ├── adk_development_workflow.md # Step-by-step dev process
+│   ├── agent_engine_deployment_guide.md # Agent Engine deployment guide
+│   ├── code_execution_guide.md     # Code execution capabilities and security
 │   └── copilotkit_agui_integration.md  # Frontend integration
 │
 ├── 🧩 templates/                   # Starter templates
@@ -235,6 +237,70 @@ root_agent = Agent(
 ```bash
 gcloud run deploy my-agent --source .
 ```
+
+### Deploy to Vertex AI Agent Engine (Recommended)
+
+Deploy your agent to Google's fully managed Agent Engine service:
+
+1. **Prerequisites**:
+   - Google Cloud account with billing enabled
+   - Python 3.9-3.13
+   - Google Cloud SDK installed and authenticated
+   - Vertex AI API enabled in your project
+
+2. **Install the required SDK**:
+   ```bash
+   pip install google-cloud-aiplatform[adk,agent_engines]>=1.111
+   ```
+
+3. **Deploy using the ADK CLI**:
+   ```bash
+   adk deploy agent_engine \
+       --project=your-project-id \
+       --region=us-central1 \
+       --display_name="My Agent" \
+       /path/to/agent
+   ```
+
+For detailed deployment instructions and alternative methods, see the [Agent Engine Deployment Guide](adk_knowledge_base/agent_engine_deployment_guide.md).
+
+### Adding Code Execution Capabilities
+
+ADK agents can leverage code execution for dynamic operations. Built-in tools include:
+
+- **Gemini Code Execution**: Execute code using Gemini models
+- **GKE Code Executor**: Secure and scalable code execution in GKE
+- **Database Tools**: Execute SQL queries with BigQuery, BigTable, and Cloud Spanner
+
+To implement custom code execution in your agent:
+
+1. Create a function tool that handles code execution safely:
+
+```python
+def execute_python_code(code: str) -> dict:
+    """Execute Python code in a safe environment and return results."""
+    # Implementation with security measures (sandboxing, timeouts, etc.)
+    # See code_execution_guide.md for details
+    pass
+```
+
+2. Add it to your agent's tools:
+
+```python
+root_agent = Agent(
+    name="code_execution_agent",
+    tools=[execute_python_code],
+    # ... other configuration
+)
+```
+
+⚠️ **Security Warning**: When implementing code execution, always follow security best practices:
+- Execute code in a sandboxed environment
+- Implement timeouts to prevent infinite loops
+- Never run code with elevated privileges
+- Validate and sanitize all inputs
+
+For detailed implementation and security guidelines, see the [Code Execution Guide](adk_knowledge_base/code_execution_guide.md).
 
 See [Advanced Topics](adk_knowledge_base/adk_reference_guide.md#advanced-topics) for more deployment options.
 

@@ -4,6 +4,9 @@ google-adk
 # Environment variables
 python-dotenv
 
+# For deployment to Vertex AI Agent Engine
+google-cloud-aiplatform[adk,agent_engines]>=1.111
+
 # Optional: Supabase for database
 # supabase
 

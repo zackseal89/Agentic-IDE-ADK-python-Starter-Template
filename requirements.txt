@@ -7,6 +7,17 @@ python-dotenv
 # For deployment to Vertex AI Agent Engine
 google-cloud-aiplatform[adk,agent_engines]>=1.111
 
+# Optional: Vector databases for memory storage
+# pinecone-client
+# weaviate-client
+# chromadb
+
+# Optional: Knowledge graphs for structured memory
+# neo4j
+
+# Optional: Async operations
+# asyncio-mqtt  # if using MQTT for async operations
+
 # Optional: Supabase for database
 # supabase
 

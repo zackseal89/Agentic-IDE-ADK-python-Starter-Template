@@ -109,6 +109,18 @@ Your AI will:
 3. Write the code following ADK best practices
 4. Test it with you
 
+### 7️⃣ Context Engineering Option 🧠
+
+For production-grade agents, consider using the memory agent template which includes:
+- **Session Management**: Short-term working memory with security and performance optimizations
+- **Long-term Memory**: Persistent user information across sessions with vector database integration
+- **Context Assembly**: Dynamic construction of state-aware prompts
+- **Security Features**: PII redaction and strict session isolation
+
+> *"I want to build an agent with advanced memory and context management"*
+
+Use the `memory_agent` template to get started with sophisticated context engineering capabilities.
+
 ---
 
 ## 🤖 AI-Assisted Development
@@ -151,7 +163,8 @@ my-agent-project/
 │
 ├── 🧩 templates/                   # Starter templates
 │   ├── basic_agent/                # Simple agent to get started
-│   └── tool_agent/                 # Agent with custom tools
+│   ├── tool_agent/                 # Agent with custom tools
+│   └── memory_agent/               # Agent with advanced session & memory management
 │
 ├── 🤖 agents/                      # Your agents go here!
 │   └── (your agents)
@@ -190,6 +203,12 @@ adk web --port 8000
 ```bash
 # Copy the basic template
 cp -r templates/basic_agent agents/my_agent
+
+# Or copy the tool agent template
+cp -r templates/tool_agent agents/my_agent
+
+# Or copy the memory agent template for advanced context management
+cp -r templates/memory_agent agents/my_agent
 
 # Edit agents/my_agent/agent.py with your logic
 ```

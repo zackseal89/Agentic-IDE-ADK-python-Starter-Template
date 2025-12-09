@@ -10,7 +10,7 @@ Use this workflow to scaffold a new agent project.
 
 Ask the user:
 1. **Agent name:** (lowercase with underscores, e.g., `recipe_finder`)
-2. **Use template?** Basic (minimal) or Tool Agent (with custom tools)
+2. **Use template?** Basic (minimal), Tool Agent (with custom tools), or Memory Agent (with session and memory management)
 
 ---
 

@@ -206,6 +206,28 @@ def my_custom_tool(param: str) -> str:
 
 These functions are then passed to the `tools` list when initializing an agent.
 
+### Memory and Session Management
+
+ADK agents can implement sophisticated memory and session management for production-grade applications.
+
+#### Session Management
+- **Short-term memory**: Manage conversation context within a single session
+- **Security**: Implement PII redaction and session isolation
+- **Performance**: Use token-based truncation and recursive summarization
+- **Lifecycle**: Implement TTL policies for session cleanup
+
+#### Long-term Memory
+- **Storage**: Use vector databases (Pinecone, Weaviate) for semantic search
+- **Retrieval**: Implement blended scoring (relevance, recency, importance)
+- **Generation**: Use LLM-driven ETL processes for memory creation
+- **Consolidation**: Background processing for memory merging and pruning
+
+#### Context Engineering
+A production agent's context payload includes:
+- System Instructions and Tool Definitions
+- Long-term Memory and External Knowledge (RAG)
+- Immediate Conversation History and State
+
 ---
 
 ## Advanced Topics

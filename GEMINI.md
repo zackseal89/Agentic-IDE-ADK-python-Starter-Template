@@ -20,6 +20,7 @@ Before helping with any task, familiarize yourself with these resources:
 |----------|---------|
 | [adk_reference_guide.md](adk_knowledge_base/adk_reference_guide.md) | Core concepts, agent types, tools, deployment |
 | [adk_development_workflow.md](adk_knowledge_base/adk_development_workflow.md) | Step-by-step development phases |
+| [context_engineering_guide.md](adk_knowledge_base/context_engineering_guide.md) | Session & memory management best practices |
 | [copilotkit_agui_integration.md](adk_knowledge_base/copilotkit_agui_integration.md) | Adding a frontend UI |
 
 ---

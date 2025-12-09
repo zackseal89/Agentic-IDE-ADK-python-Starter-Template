@@ -20,6 +20,7 @@ Reference these documents in `adk_knowledge_base/`:
 |----------|---------|
 | `adk_reference_guide.md` | Core concepts, agent types, tools, deployment |
 | `adk_development_workflow.md` | Phases: Setup → Design → Implement → Test → Deploy |
+| `context_engineering_guide.md` | Session & memory management best practices |
 | `copilotkit_agui_integration.md` | Frontend UI integration guide |
 
 ---
@@ -45,6 +46,21 @@ Choose based on the use case:
 | `ParallelAgent` | Independent tasks that can run together |
 | `LoopAgent` | Repeated tasks until condition met |
 | `BaseAgent` (custom) | Unique logic not covered above |
+
+### 3. Context Engineering Considerations
+For production-grade agents, consider both session and memory management:
+
+**Session Management:**
+- Short-term working memory for active conversations
+- Implement PII redaction and security measures
+- Manage token limits and conversation history
+- Apply TTL policies for session cleanup
+
+**Memory Management:**
+- Long-term persistence across sessions
+- Use vector databases for semantic search
+- Implement blended retrieval scoring (relevance, recency, importance)
+- Plan for background memory generation and consolidation
 
 ### 3. Implementation Standards
 

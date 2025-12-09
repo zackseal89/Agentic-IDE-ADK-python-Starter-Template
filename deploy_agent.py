@@ -3,6 +3,7 @@ Deploy script for ADK agents to Vertex AI Agent Engine.
 
 This script handles the deployment of your ADK agent to Google's
 managed Agent Engine service with proper configuration and error handling.
+Supports both standard agents and memory-enabled agents with context engineering.
 """
 
 import argparse

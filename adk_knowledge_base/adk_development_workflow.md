@@ -37,6 +37,16 @@ This document outlines the standard workflow for developing AI agents using the 
     *   Identify what external actions the agent needs (e.g., Search, Database access).
     *   Select built-in tools (Google Search, Code Execution) or plan custom Python functions.
 
+3.  **Plan Memory & Session Management**
+    *   **Session Memory:** For short-term working memory during a conversation
+        * Plan for PII redaction and security measures
+        * Consider token limits and conversation history management
+        * Implement session isolation and access controls
+    *   **Long-term Memory:** For persistent user information across sessions
+        * Plan for vector database integration (Pinecone, Weaviate, etc.)
+        * Design memory retrieval strategies with relevance scoring
+        * Plan for background memory generation and consolidation
+
 ## Phase 3: Implementation
 
 1.  **Implement Tools (`agent.py`)**
